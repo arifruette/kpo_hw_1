@@ -1,6 +1,6 @@
-import di.DaggerPagesComponent
-import di.DaggerVetClinicComponent
-import di.DaggerZooComponent
+import di.pages.DaggerPagesComponent
+import di.vetclinic.DaggerVetClinicComponent
+import di.zoo.DaggerZooComponent
 import presentation.pages.AddAnimalPage
 import presentation.pages.DefaultPageRenderer
 import presentation.pages.Page

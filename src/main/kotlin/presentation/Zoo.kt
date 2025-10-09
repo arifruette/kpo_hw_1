@@ -1,11 +1,22 @@
 package presentation
 
 import domain.Animal
-import domain.VetClinic
+import domain.contract.VetClinic
 import javax.inject.Inject
 
 class Zoo @Inject constructor(
     private val vetClinic: VetClinic
 ) {
-    @Inject lateinit var animal: Animal
+    private val _animals: MutableList<Animal> = ArrayList()
+
+    val animals: List<Animal> = _animals
+
+    fun addAnimal(animal: Animal): Boolean {
+        val validationResult = vetClinic.checkAnimalHealth(animal.health)
+        if (!validationResult) {
+            return false
+        }
+        _animals.add(animal)
+        return true
+    }
 }

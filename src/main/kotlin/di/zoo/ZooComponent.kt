@@ -1,6 +1,7 @@
-package di
+package di.zoo
 
 import dagger.Component
+import di.vetclinic.VetClinicComponent
 import presentation.Zoo
 
 @Component(

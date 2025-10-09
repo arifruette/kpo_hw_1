@@ -1,8 +1,8 @@
-package di
+package di.zoo
 
 import dagger.Module
 import dagger.Provides
-import domain.VetClinic
+import domain.contract.VetClinic
 import presentation.Zoo
 
 @Module

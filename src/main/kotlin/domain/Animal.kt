@@ -1,5 +1,8 @@
 package domain
 
+import domain.contract.Alive
+import domain.contract.Inventory
+
 abstract class Animal(): Alive, Inventory {
-    abstract val healthStatus: HealthStatus
+    abstract val health: Int
 }

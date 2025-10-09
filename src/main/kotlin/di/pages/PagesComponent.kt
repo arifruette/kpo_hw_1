@@ -1,6 +1,8 @@
-package di
+package di.pages
 
 import dagger.Component
+import di.vetclinic.VetClinicComponent
+import di.zoo.ZooComponent
 import presentation.pages.AddAnimalPage
 import presentation.pages.MainPage
 

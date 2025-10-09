@@ -1,4 +1,4 @@
-package domain
+package domain.contract
 
 /**
  * Интерфейс ветеринарной клиники

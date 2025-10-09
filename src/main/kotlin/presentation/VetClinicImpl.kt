@@ -1,6 +1,6 @@
 package presentation
 
-import domain.VetClinic
+import domain.contract.VetClinic
 import javax.inject.Inject
 
 class VetClinicImpl @Inject constructor(): VetClinic {
