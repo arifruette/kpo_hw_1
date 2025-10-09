@@ -7,8 +7,8 @@ package domain
 interface VetClinic {
     /**
      * Метод проверки здоровья животного
-     * @param animal животное
+     * @param healthLevel уровень здоровья животного
      * @return `true` если животное здорово и `false` в ином случае
      */
-    fun checkAnimalHealth(animal: Animal): Boolean
+    fun checkAnimalHealth(healthLevel: Int): Boolean
 }

@@ -1,14 +1,13 @@
 package di
 
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import domain.VetClinic
 import presentation.VetClinicImpl
-import javax.inject.Singleton
 
 @Module
-interface VetClinicModule {
+object VetClinicModule {
 
-    @Binds
-    fun bindVetClinic(vetClinicImpl: VetClinicImpl): VetClinic
+    @Provides
+    fun provideVetClinic(): VetClinic = VetClinicImpl()
 }
