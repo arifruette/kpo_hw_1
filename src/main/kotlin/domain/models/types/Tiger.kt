@@ -1,6 +1,6 @@
-package domain.animals
+package domain.models.types
 
-import domain.Predator
+import domain.models.Predator
 
 data class Tiger(
     override val health: Int,

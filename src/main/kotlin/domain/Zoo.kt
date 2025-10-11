@@ -1,6 +1,6 @@
-package presentation
+package domain
 
-import domain.Animal
+import domain.models.Animal
 import domain.contract.VetClinic
 import javax.inject.Inject
 

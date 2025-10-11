@@ -1,3 +1,3 @@
-package domain
+package domain.models
 
 abstract class Predator: Animal()

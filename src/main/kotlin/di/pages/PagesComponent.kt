@@ -1,16 +1,20 @@
 package di.pages
 
-import dagger.Component
-import di.vetclinic.VetClinicComponent
-import di.zoo.ZooComponent
-import presentation.pages.AddAnimalPage
-import presentation.pages.MainPage
+import dagger.Subcomponent
+import presentation.AddAnimalPage
+import presentation.FoodInfoPage
+import presentation.KindAnimalsPage
+import presentation.MainPage
 
-@Component(
-    modules = [PagesModule::class],
-    dependencies = [VetClinicComponent::class, ZooComponent::class]
-)
+@Subcomponent
 interface PagesComponent {
     val mainPage: MainPage
     val addAnimalPage: AddAnimalPage
+    val foodInfoPage: FoodInfoPage
+    val kindAnimalsPage: KindAnimalsPage
+
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(): PagesComponent
+    }
 }

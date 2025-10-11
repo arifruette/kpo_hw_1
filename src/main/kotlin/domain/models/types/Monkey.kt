@@ -1,6 +1,6 @@
-package domain.animals
+package domain.models.types
 
-import domain.Herbivore
+import domain.models.Herbivore
 
 data class Monkey(
     override val kindness: Int,

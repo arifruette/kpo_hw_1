@@ -1,5 +1,6 @@
-package presentation.pages
+package presentation
 
+import presentation.contract.HandleResult
 import java.util.*
 import kotlin.reflect.KClass
 

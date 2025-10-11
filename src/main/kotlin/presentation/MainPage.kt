@@ -1,5 +1,6 @@
-package presentation.pages
+package presentation
 
+import presentation.contract.HandleResult
 import javax.inject.Inject
 
 class MainPage @Inject constructor() : Page() {
@@ -19,6 +20,8 @@ class MainPage @Inject constructor() : Page() {
     override fun handleUserInput(): HandleResult =
         when (readLine()) {
             "1" -> HandleResult.Push(AddAnimalPage::class)
+            "2" -> HandleResult.Push(FoodInfoPage::class)
+            "3" -> HandleResult.Push(KindAnimalsPage::class)
             else -> HandleResult.Finish
         }
 

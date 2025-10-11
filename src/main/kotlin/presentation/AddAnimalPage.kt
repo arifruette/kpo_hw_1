@@ -1,7 +1,7 @@
-package presentation.pages
+package presentation
 
-import domain.animals.*
-import presentation.Zoo
+import domain.Zoo
+import domain.models.types.*
 import javax.inject.Inject
 
 class AddAnimalPage @Inject constructor(
@@ -62,15 +62,9 @@ class AddAnimalPage @Inject constructor(
             }
         }
         if (zoo.addAnimal(newAnimal)) {
-            showInfo("Животное $name успешно добавлено")
+            showInfo("Животное $name с номером ${newAnimal.number} успешно добавлено")
         } else {
             showError("Животное не прошло проверку клиники :(")
         }
-    }
-
-
-    override fun handleUserInput(): HandleResult {
-        waitButtonPress()
-        return HandleResult.Pop
     }
 }

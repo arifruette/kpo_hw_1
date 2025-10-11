@@ -1,4 +1,4 @@
-package presentation
+package domain
 
 import domain.contract.VetClinic
 import javax.inject.Inject

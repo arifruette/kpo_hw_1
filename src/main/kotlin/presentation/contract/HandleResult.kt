@@ -1,5 +1,6 @@
-package presentation.pages
+package presentation.contract
 
+import presentation.Page
 import kotlin.reflect.KClass
 
 sealed interface HandleResult {

@@ -1,12 +1,15 @@
-package presentation.pages
+package presentation
+
+import presentation.contract.HandleResult
 
 abstract class Page {
 
-    val ANSI_RED: String = "\u001B[31m"
-
     abstract fun render()
 
-    abstract fun handleUserInput(): HandleResult
+    open fun handleUserInput(): HandleResult {
+        waitButtonPress()
+        return HandleResult.Pop
+    }
 
     fun showError(message: String) {
         println(ANSI_RED + message)
@@ -29,5 +32,9 @@ abstract class Page {
     fun waitButtonPress() {
         println("Нажмите Enter чтобы продолжить")
         readLine()
+    }
+
+    companion object {
+        const val ANSI_RED: String = "\u001B[31m"
     }
 }

@@ -1,13 +1,14 @@
 package di.zoo
 
-import dagger.Component
-import di.vetclinic.VetClinicComponent
-import presentation.Zoo
+import dagger.Subcomponent
+import domain.Zoo
 
-@Component(
-    modules = [ZooModule::class],
-    dependencies = [VetClinicComponent::class]
-)
+@Subcomponent
 interface ZooComponent {
     val zoo: Zoo
+
+    @Subcomponent.Factory
+    interface Factory {
+        fun create(): ZooComponent
+    }
 }

@@ -1,4 +1,4 @@
-package domain.animals
+package domain.models.types
 
 enum class AllAnimalTypes(val animalName: String) {
     MONKEY(animalName = "Обезьяна"),
