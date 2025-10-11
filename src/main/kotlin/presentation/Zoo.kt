@@ -11,6 +11,10 @@ class Zoo @Inject constructor(
 
     val animals: List<Animal> = _animals
 
+    /**
+     * Метод добавления животного
+     * @return `true` если удалось добавить, `false`, если не прошел проверку
+     */
     fun addAnimal(animal: Animal): Boolean {
         val validationResult = vetClinic.checkAnimalHealth(animal.health)
         if (!validationResult) {

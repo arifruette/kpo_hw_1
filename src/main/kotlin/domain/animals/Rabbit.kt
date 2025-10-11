@@ -2,9 +2,9 @@ package domain.animals
 
 import domain.Herbivore
 
-class Rabbit(
+data class Rabbit(
     override val kindness: Int,
     override val health: Int,
     override val food: Int,
-    override val number: Int
+    override val name: String
 ) : Herbivore()
