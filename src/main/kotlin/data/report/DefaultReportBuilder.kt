@@ -15,5 +15,5 @@ class DefaultReportBuilder @Inject constructor():  ReportBuilder {
         reportString.append(message)
     }
 
-    override fun build(): String = reportString.toString()
+    override fun build(): String = reportString.toString().also { reportString.clear() }
 }

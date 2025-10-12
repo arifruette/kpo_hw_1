@@ -1,5 +1,8 @@
 package domain.contract
 
+/**
+ * Интерфейс билдера репортов
+ */
 interface ReportBuilder {
 
     fun appendLine(message: String)
