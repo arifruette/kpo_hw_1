@@ -1,7 +1,7 @@
 package di.zoo
 
 import dagger.Subcomponent
-import domain.Zoo
+import data.zoo.Zoo
 
 @Subcomponent
 interface ZooComponent {

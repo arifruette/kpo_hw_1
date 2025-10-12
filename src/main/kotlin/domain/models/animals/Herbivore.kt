@@ -1,4 +1,4 @@
-package domain.models
+package domain.models.animals
 
 /**
  * Абстрактный класс травоядного

@@ -1,7 +1,8 @@
-package domain
+package data.zoo
 
-import domain.models.Animal
+import domain.models.animals.Animal
 import domain.contract.VetClinic
+import domain.models.inventory.Thing
 import javax.inject.Inject
 
 /**
@@ -11,8 +12,10 @@ class Zoo @Inject constructor(
     private val vetClinic: VetClinic
 ) {
     private val _animals: MutableList<Animal> = ArrayList()
+    private val _things: MutableList<Thing> = ArrayList()
 
     val animals: List<Animal> = _animals
+    val things: List<Thing> = _things
 
     /**
      * Метод добавления животного
@@ -25,5 +28,12 @@ class Zoo @Inject constructor(
         }
         _animals.add(animal)
         return true
+    }
+
+    /**
+     * Метод для добавления вещи на учет
+     */
+    fun addThing(thing: Thing) {
+        _things.add(thing)
     }
 }

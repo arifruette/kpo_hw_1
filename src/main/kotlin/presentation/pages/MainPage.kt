@@ -8,7 +8,9 @@ import javax.inject.Inject
 /**
  * Главная страница с менюшкой
  */
-class MainPage @Inject constructor(override val consoleAgent: ConsoleAgent) : Page() {
+class MainPage @Inject constructor(
+    override val consoleAgent: ConsoleAgent
+) : Page() {
 
     override fun render() {
         consoleAgent.showInfo(
@@ -28,6 +30,8 @@ class MainPage @Inject constructor(override val consoleAgent: ConsoleAgent) : Pa
             "1" -> FinishRenderResult.Push(AddAnimalPage::class)
             "2" -> FinishRenderResult.Push(FoodInfoPage::class)
             "3" -> FinishRenderResult.Push(KindAnimalsInfoPage::class)
+            "4" -> FinishRenderResult.Push(AddInventoryPage::class)
+            "5" -> FinishRenderResult.Push(AddInventoryPage::class)
             else -> FinishRenderResult.Finish
         }
 

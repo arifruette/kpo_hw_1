@@ -1,6 +1,6 @@
 package presentation.pages
 
-import domain.Zoo
+import data.zoo.Zoo
 import domain.contract.ConsoleAgent
 import presentation.Page
 import javax.inject.Inject

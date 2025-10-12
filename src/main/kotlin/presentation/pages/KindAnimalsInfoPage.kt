@@ -1,8 +1,9 @@
 package presentation.pages
 
-import domain.Zoo
+import data.zoo.Zoo
 import domain.contract.ConsoleAgent
-import domain.models.Herbivore
+import domain.contract.ReportBuilder
+import domain.models.animals.Herbivore
 import presentation.Page
 import javax.inject.Inject
 
@@ -11,19 +12,29 @@ import javax.inject.Inject
  */
 class KindAnimalsInfoPage @Inject constructor(
     private val zoo: Zoo,
-    override val consoleAgent: ConsoleAgent
+    override val consoleAgent: ConsoleAgent,
+    private val reportBuilder: ReportBuilder
 ) : Page() {
     override fun render() {
-        consoleAgent.showInfo("Животные которые могут быть отправлены в зоопарк:")
+        reportBuilder.appendLine(KIND_ANIMALS_TITLE)
         var curIndex = 1
-        val kindAnimalsInfo = buildString {
-            zoo.animals.filterIsInstance<Herbivore>().forEach {
+        val herbivores = zoo.animals.filterIsInstance<Herbivore>()
+        if (herbivores.isNotEmpty()) {
+            herbivores.forEach {
                 if (it.kindness > 5) {
-                    appendLine("${curIndex++}. ${it.name} с номером ${it.number}")
+                    reportBuilder.appendLine(
+                        "${curIndex++}. ${it.name} с номером ${it.number}"
+                    )
                 }
             }
+        } else {
+            reportBuilder.appendLine(NO_SUCH_ANIMALS)
         }
-        val resultOutput = kindAnimalsInfo.ifEmpty { "Таких животных не найдено :(" }
-        consoleAgent.showInfo(resultOutput)
+        consoleAgent.showInfo(reportBuilder.build())
+    }
+
+    companion object {
+        const val KIND_ANIMALS_TITLE = "Животные которые могут быть отправлены в зоопарк:"
+        const val NO_SUCH_ANIMALS = "Таких животных нет :("
     }
 }

@@ -1,4 +1,4 @@
-package domain
+package data.console
 
 import domain.contract.ConsoleAgent
 import javax.inject.Inject

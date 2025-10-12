@@ -1,8 +1,12 @@
 package presentation.pages
 
-import domain.Zoo
+import data.zoo.Zoo
 import domain.contract.ConsoleAgent
-import domain.models.types.*
+import domain.models.animals.types.AnimalType
+import domain.models.animals.types.Monkey
+import domain.models.animals.types.Rabbit
+import domain.models.animals.types.Tiger
+import domain.models.animals.types.Wolf
 import presentation.Page
 import javax.inject.Inject
 
@@ -21,9 +25,9 @@ class AddAnimalPage @Inject constructor(
             consoleAgent.showError(INCORRECT_DATA)
             return
         }
-        consoleAgent.showInfo(AllAnimalTypes.typesList)
+        consoleAgent.showInfo(AnimalType.typesList)
         val enteredType = consoleAgent.promptInteger(ANIMAL_TYPE)
-        val animalType = AllAnimalTypes.entries.firstOrNull {
+        val animalType = AnimalType.entries.firstOrNull {
             it.ordinal + 1 == enteredType
         }
         if (animalType == null) {
@@ -44,8 +48,8 @@ class AddAnimalPage @Inject constructor(
         }
     }
 
-    private fun createAnimal(animalType: AllAnimalTypes, name: String, health: Int, food: Int) = when (animalType) {
-        AllAnimalTypes.MONKEY -> {
+    private fun createAnimal(animalType: AnimalType, name: String, health: Int, food: Int) = when (animalType) {
+        AnimalType.MONKEY -> {
             val kindness = consoleAgent.promptInteger(KINDNESS_LEVEL)
             Monkey(
                 kindness = kindness,
@@ -55,7 +59,7 @@ class AddAnimalPage @Inject constructor(
             )
         }
 
-        AllAnimalTypes.RABBIT -> {
+        AnimalType.RABBIT -> {
             val kindness = consoleAgent.promptInteger(KINDNESS_LEVEL)
             Rabbit(
                 kindness = kindness,
@@ -65,7 +69,7 @@ class AddAnimalPage @Inject constructor(
             )
         }
 
-        AllAnimalTypes.TIGER -> {
+        AnimalType.TIGER -> {
             Tiger(
                 health = health,
                 food = food,
@@ -73,7 +77,7 @@ class AddAnimalPage @Inject constructor(
             )
         }
 
-        AllAnimalTypes.WOLF -> {
+        AnimalType.WOLF -> {
             Wolf(
                 health = health,
                 food = food,

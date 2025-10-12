@@ -1,4 +1,4 @@
-package domain
+package data.zoo
 
 import domain.contract.VetClinic
 import javax.inject.Inject

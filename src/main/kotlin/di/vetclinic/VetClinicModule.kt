@@ -3,7 +3,7 @@ package di.vetclinic
 import dagger.Module
 import dagger.Provides
 import domain.contract.VetClinic
-import domain.VetClinicImpl
+import data.zoo.VetClinicImpl
 import javax.inject.Singleton
 
 @Module

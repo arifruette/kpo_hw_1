@@ -2,6 +2,7 @@ package di.pages
 
 import dagger.Subcomponent
 import presentation.pages.AddAnimalPage
+import presentation.pages.AddInventoryPage
 import presentation.pages.FoodInfoPage
 import presentation.pages.KindAnimalsInfoPage
 import presentation.pages.MainPage
@@ -12,6 +13,7 @@ interface PagesComponent {
     val addAnimalPage: AddAnimalPage
     val foodInfoPage: FoodInfoPage
     val kindAnimalsInfoPage: KindAnimalsInfoPage
+    val addInventoryPage: AddInventoryPage
 
     @Subcomponent.Factory
     interface Factory {

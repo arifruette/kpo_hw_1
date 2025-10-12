@@ -8,7 +8,7 @@ import presentation.contract.FinishRenderResult
  */
 abstract class Page {
 
-    protected abstract val consoleAgent: ConsoleAgent
+    abstract val consoleAgent: ConsoleAgent
 
     abstract fun render()
 

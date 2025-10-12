@@ -1,9 +1,9 @@
-package domain.models.types
+package domain.models.animals.types
 
 /**
  * Enumb содержащий все типы животных которые можно создать
  */
-enum class AllAnimalTypes(val animalName: String) {
+enum class AnimalType(val animalName: String) {
     MONKEY(animalName = "Обезьяна"),
     RABBIT(animalName = "Кролик"),
     TIGER(animalName = "Тигр"),

@@ -1,11 +1,11 @@
 package presentation.pages
 
-import domain.Zoo
+import data.zoo.Zoo
 import domain.contract.ConsoleAgent
-import domain.models.types.Monkey
-import domain.models.types.Rabbit
-import domain.models.types.Tiger
-import domain.models.types.Wolf
+import domain.models.animals.types.Monkey
+import domain.models.animals.types.Rabbit
+import domain.models.animals.types.Tiger
+import domain.models.animals.types.Wolf
 import io.mockk.every
 import io.mockk.justRun
 import io.mockk.mockk

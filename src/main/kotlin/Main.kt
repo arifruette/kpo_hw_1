@@ -4,6 +4,7 @@ import presentation.DefaultPageRenderer
 import presentation.pages.FoodInfoPage
 import presentation.pages.KindAnimalsInfoPage
 import presentation.Page
+import presentation.pages.AddInventoryPage
 import kotlin.reflect.KClass
 
 fun main() {
@@ -18,6 +19,7 @@ fun main() {
     screens[AddAnimalPage::class] = pagesComponent.addAnimalPage
     screens[FoodInfoPage::class] = pagesComponent.foodInfoPage
     screens[KindAnimalsInfoPage::class] = pagesComponent.kindAnimalsInfoPage
+    screens[AddInventoryPage::class] = pagesComponent.addInventoryPage
 
     val defaultPageRenderer = DefaultPageRenderer(screens = screens, startPage = mainPage)
     defaultPageRenderer.startRendering()

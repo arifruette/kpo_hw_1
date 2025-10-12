@@ -2,9 +2,11 @@ package di.pages
 
 import dagger.Module
 import dagger.Provides
-import domain.Zoo
+import data.zoo.Zoo
 import domain.contract.ConsoleAgent
+import domain.contract.ReportBuilder
 import presentation.pages.AddAnimalPage
+import presentation.pages.AddInventoryPage
 import presentation.pages.FoodInfoPage
 import presentation.pages.KindAnimalsInfoPage
 import presentation.pages.MainPage
@@ -37,6 +39,14 @@ object PagesModule {
     @Singleton
     fun provideKindAnimalsPage(
         zoo: Zoo,
-        consoleAgent: ConsoleAgent
-    ) = KindAnimalsInfoPage(zoo, consoleAgent)
+        consoleAgent: ConsoleAgent,
+        reportBuilder: ReportBuilder
+    ) = KindAnimalsInfoPage(zoo, consoleAgent, reportBuilder)
+
+    @Provides
+    @Singleton
+    fun provideAddInventoryPage(
+        zoo: Zoo,
+        consoleAgent: ConsoleAgent,
+    ) = AddInventoryPage(zoo, consoleAgent)
 }
