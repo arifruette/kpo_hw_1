@@ -5,6 +5,10 @@ import presentation.pages.MainPage
 import java.util.*
 import kotlin.reflect.KClass
 
+/**
+ * Базовый отрисовщик страниц
+ * содержит стек страниц и управляет им, знает какие страницы существуют
+ */
 class DefaultPageRenderer(
     private val screens: Map<KClass<out Page>, Page>,
     private val startPage: Page

@@ -3,6 +3,9 @@ package presentation
 import domain.contract.ConsoleAgent
 import presentation.contract.FinishRenderResult
 
+/**
+ * Абстрактный класс для страницы которые можно отрисовывать
+ */
 abstract class Page {
 
     protected abstract val consoleAgent: ConsoleAgent

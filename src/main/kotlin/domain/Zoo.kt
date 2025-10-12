@@ -4,6 +4,9 @@ import domain.models.Animal
 import domain.contract.VetClinic
 import javax.inject.Inject
 
+/**
+ * Непосредственно зоопарк
+ */
 class Zoo @Inject constructor(
     private val vetClinic: VetClinic
 ) {

@@ -6,6 +6,9 @@ import domain.models.Herbivore
 import presentation.Page
 import javax.inject.Inject
 
+/**
+ * Страница с информацией о животных которых можно отправить в контактный зоопарк
+ */
 class KindAnimalsInfoPage @Inject constructor(
     private val zoo: Zoo,
     override val consoleAgent: ConsoleAgent

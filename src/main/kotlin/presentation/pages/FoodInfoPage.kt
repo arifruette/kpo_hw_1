@@ -5,6 +5,9 @@ import domain.contract.ConsoleAgent
 import presentation.Page
 import javax.inject.Inject
 
+/**
+ * Страница вывода отчета о потребляемой еде
+ */
 class FoodInfoPage @Inject constructor(
     private val zoo: Zoo,
     override val consoleAgent: ConsoleAgent

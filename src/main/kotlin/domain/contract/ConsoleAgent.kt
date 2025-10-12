@@ -1,5 +1,8 @@
 package domain.contract
 
+/**
+ * Интерфейс описывающий правила работы с консолью
+ */
 interface ConsoleAgent {
     fun showInfo(message: String)
 

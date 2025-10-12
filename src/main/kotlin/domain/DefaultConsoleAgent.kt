@@ -3,6 +3,9 @@ package domain
 import domain.contract.ConsoleAgent
 import javax.inject.Inject
 
+/**
+ * Базовый агент для работы с консолью
+ */
 class DefaultConsoleAgent @Inject constructor(): ConsoleAgent {
     override fun showError(message: String) {
         println(ANSI_RED + message)

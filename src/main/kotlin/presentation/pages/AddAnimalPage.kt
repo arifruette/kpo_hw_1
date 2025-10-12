@@ -6,6 +6,9 @@ import domain.models.types.*
 import presentation.Page
 import javax.inject.Inject
 
+/**
+ * Страница добавления животного в зоопарк
+ */
 class AddAnimalPage @Inject constructor(
     private val zoo: Zoo,
     override val consoleAgent: ConsoleAgent

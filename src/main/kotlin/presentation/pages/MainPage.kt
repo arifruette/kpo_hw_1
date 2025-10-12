@@ -5,6 +5,9 @@ import presentation.Page
 import presentation.contract.FinishRenderResult
 import javax.inject.Inject
 
+/**
+ * Главная страница с менюшкой
+ */
 class MainPage @Inject constructor(override val consoleAgent: ConsoleAgent) : Page() {
 
     override fun render() {
