@@ -15,6 +15,8 @@ dependencies {
     implementation("com.google.dagger:dagger:2.55")
     kapt("com.google.dagger:dagger-compiler:2.55")
     testImplementation(kotlin("test"))
+    testImplementation("io.mockk:mockk:1.14.5")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
 }
 
 

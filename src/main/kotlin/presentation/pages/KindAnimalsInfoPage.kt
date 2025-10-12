@@ -1,14 +1,17 @@
-package presentation
+package presentation.pages
 
 import domain.Zoo
+import domain.contract.ConsoleAgent
 import domain.models.Herbivore
+import presentation.Page
 import javax.inject.Inject
 
-class KindAnimalsPage @Inject constructor(
-    private val zoo: Zoo
+class KindAnimalsInfoPage @Inject constructor(
+    private val zoo: Zoo,
+    override val consoleAgent: ConsoleAgent
 ) : Page() {
     override fun render() {
-        showInfo("Животные которые могут быть отправлены в зоопарк:")
+        consoleAgent.showInfo("Животные которые могут быть отправлены в зоопарк:")
         var curIndex = 1
         val kindAnimalsInfo = buildString {
             zoo.animals.filterIsInstance<Herbivore>().forEach {
@@ -18,6 +21,6 @@ class KindAnimalsPage @Inject constructor(
             }
         }
         val resultOutput = kindAnimalsInfo.ifEmpty { "Таких животных не найдено :(" }
-        showInfo(resultOutput)
+        consoleAgent.showInfo(resultOutput)
     }
 }

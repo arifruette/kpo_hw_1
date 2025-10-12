@@ -1,6 +1,7 @@
 package presentation
 
-import presentation.contract.HandleResult
+import presentation.contract.FinishRenderResult
+import presentation.pages.MainPage
 import java.util.*
 import kotlin.reflect.KClass
 
@@ -15,9 +16,9 @@ class DefaultPageRenderer(
         do {
             val curPage = _pageStack.peek()
             curPage.render()
-            val handleResult = curPage.handleUserInput()
+            val handleResult = curPage.finishRendering()
             when (handleResult) {
-                is HandleResult.Push -> {
+                is FinishRenderResult.Push -> {
                     val newScreen = screens[handleResult.page]
                     checkNotNull(newScreen) {
                         "Экран ${handleResult.page.simpleName} не был найден"
@@ -25,9 +26,9 @@ class DefaultPageRenderer(
                     push(newScreen)
                 }
 
-                is HandleResult.Pop -> pop()
-                is HandleResult.PopToMain -> popToMain()
-                is HandleResult.Finish -> break
+                is FinishRenderResult.Pop -> pop()
+                is FinishRenderResult.PopToMain -> popToMain()
+                is FinishRenderResult.Finish -> break
             }
             clearConsole()
         } while (true)

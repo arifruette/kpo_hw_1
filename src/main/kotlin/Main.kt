@@ -1,8 +1,8 @@
 import di.DaggerAppComponent
-import presentation.AddAnimalPage
+import presentation.pages.AddAnimalPage
 import presentation.DefaultPageRenderer
-import presentation.FoodInfoPage
-import presentation.KindAnimalsPage
+import presentation.pages.FoodInfoPage
+import presentation.pages.KindAnimalsInfoPage
 import presentation.Page
 import kotlin.reflect.KClass
 
@@ -17,7 +17,7 @@ fun main() {
     screens[mainPage::class] = mainPage
     screens[AddAnimalPage::class] = pagesComponent.addAnimalPage
     screens[FoodInfoPage::class] = pagesComponent.foodInfoPage
-    screens[KindAnimalsPage::class] = pagesComponent.kindAnimalsPage
+    screens[KindAnimalsInfoPage::class] = pagesComponent.kindAnimalsInfoPage
 
     val defaultPageRenderer = DefaultPageRenderer(screens = screens, startPage = mainPage)
     defaultPageRenderer.startRendering()

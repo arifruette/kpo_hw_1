@@ -1,17 +1,17 @@
 package di.pages
 
 import dagger.Subcomponent
-import presentation.AddAnimalPage
-import presentation.FoodInfoPage
-import presentation.KindAnimalsPage
-import presentation.MainPage
+import presentation.pages.AddAnimalPage
+import presentation.pages.FoodInfoPage
+import presentation.pages.KindAnimalsInfoPage
+import presentation.pages.MainPage
 
 @Subcomponent
 interface PagesComponent {
     val mainPage: MainPage
     val addAnimalPage: AddAnimalPage
     val foodInfoPage: FoodInfoPage
-    val kindAnimalsPage: KindAnimalsPage
+    val kindAnimalsInfoPage: KindAnimalsInfoPage
 
     @Subcomponent.Factory
     interface Factory {
