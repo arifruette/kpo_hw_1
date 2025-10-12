@@ -2,6 +2,7 @@ package presentation.pages
 
 import data.zoo.Zoo
 import domain.contract.ConsoleAgent
+import domain.contract.ReportBuilder
 import presentation.Page
 import javax.inject.Inject
 
@@ -10,6 +11,7 @@ import javax.inject.Inject
  */
 class FoodInfoPage @Inject constructor(
     private val zoo: Zoo,
+    private val reportBuilder: ReportBuilder,
     override val consoleAgent: ConsoleAgent
 ) : Page() {
     override fun render() {
@@ -19,12 +21,11 @@ class FoodInfoPage @Inject constructor(
         }
         consoleAgent.showInfo(REPORT_FOOD)
         var totalFood = 0
-        consoleAgent.showInfo(buildString {
-            zoo.animals.forEach { animal ->
-                totalFood += animal.food
-                appendLine("${animal.name} с номером ${animal.number} потребляет ${animal.food}кг еды")
-            }
-        })
+        zoo.animals.forEach { animal ->
+            totalFood += animal.food
+            reportBuilder.appendLine("${animal.name} с номером ${animal.number} потребляет ${animal.food}кг еды")
+        }
+        consoleAgent.showInfo(reportBuilder.build())
         consoleAgent.showInfo("Всего: ${totalFood}кг")
     }
 

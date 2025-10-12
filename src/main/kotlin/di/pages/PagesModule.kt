@@ -10,6 +10,7 @@ import presentation.pages.AddInventoryPage
 import presentation.pages.FoodInfoPage
 import presentation.pages.KindAnimalsInfoPage
 import presentation.pages.MainPage
+import presentation.pages.RevisionPage
 import javax.inject.Singleton
 
 @Module
@@ -32,8 +33,9 @@ object PagesModule {
     @Singleton
     fun provideFoodInfoPage(
         zoo: Zoo,
+        reportBuilder: ReportBuilder,
         consoleAgent: ConsoleAgent
-    ) = FoodInfoPage(zoo, consoleAgent)
+    ) = FoodInfoPage(zoo, reportBuilder, consoleAgent)
 
     @Provides
     @Singleton
@@ -49,4 +51,12 @@ object PagesModule {
         zoo: Zoo,
         consoleAgent: ConsoleAgent,
     ) = AddInventoryPage(zoo, consoleAgent)
+
+    @Provides
+    @Singleton
+    fun provideRevisionPage(
+        zoo: Zoo,
+        consoleAgent: ConsoleAgent,
+        reportBuilder: ReportBuilder,
+    ) = RevisionPage(consoleAgent, reportBuilder, zoo)
 }

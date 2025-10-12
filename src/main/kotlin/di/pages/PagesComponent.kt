@@ -6,6 +6,7 @@ import presentation.pages.AddInventoryPage
 import presentation.pages.FoodInfoPage
 import presentation.pages.KindAnimalsInfoPage
 import presentation.pages.MainPage
+import presentation.pages.RevisionPage
 
 @Subcomponent
 interface PagesComponent {
@@ -14,6 +15,7 @@ interface PagesComponent {
     val foodInfoPage: FoodInfoPage
     val kindAnimalsInfoPage: KindAnimalsInfoPage
     val addInventoryPage: AddInventoryPage
+    val revisionPage: RevisionPage
 
     @Subcomponent.Factory
     interface Factory {
